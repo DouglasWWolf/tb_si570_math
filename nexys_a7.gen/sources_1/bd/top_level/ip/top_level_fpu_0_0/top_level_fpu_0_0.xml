@@ -1697,19 +1697,19 @@ e} datatype {name {attribs {resolve_type immediate dependency {} format string m
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>done</spirit:name>
+        <spirit:name>idle</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
-              <spirit:typeName>reg</spirit:typeName>
+              <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>OPER</spirit:name>
+        <spirit:name>OP</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>

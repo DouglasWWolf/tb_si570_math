@@ -15,17 +15,17 @@
         "system_clock": "",
         "system_reset": ""
       },
-      "button_0": "",
+      "button": "",
       "si570_regs": "",
       "si570_compute": {
         "to_int": "",
         "to_float": "",
-        "system_ila_0": "",
         "multiply": "",
         "divide": "",
-        "fpu": "",
-        "si570_math": ""
-      }
+        "si570_math": "",
+        "fpu": ""
+      },
+      "system_ila": ""
     },
     "ports": {
       "CLK100MHZ": {
@@ -177,11 +177,11 @@
           }
         }
       },
-      "button_0": {
+      "button": {
         "vlnv": "xilinx.com:module_ref:button:1.0",
         "xci_name": "top_level_button_0_0",
         "xci_path": "ip/top_level_button_0_0/top_level_button_0_0.xci",
-        "inst_hier_path": "button_0",
+        "inst_hier_path": "button",
         "reference_info": {
           "ref_type": "hdl",
           "ref_name": "button",
@@ -241,12 +241,12 @@
           "start": {
             "direction": "I"
           },
-          "si570_regs": {
+          "si570_regs_in": {
             "direction": "I",
             "left": "47",
             "right": "0"
           },
-          "done": {
+          "idle": {
             "direction": "O"
           },
           "si570_regs_out": {
@@ -344,137 +344,6 @@
               }
             }
           },
-          "system_ila_0": {
-            "vlnv": "xilinx.com:ip:system_ila:1.1",
-            "xci_name": "top_level_system_ila_0_2",
-            "xci_path": "ip/top_level_system_ila_0_2/top_level_system_ila_0_2.xci",
-            "inst_hier_path": "si570_compute/system_ila_0",
-            "parameters": {
-              "C_DATA_DEPTH": {
-                "value": "2048"
-              },
-              "C_MON_TYPE": {
-                "value": "NATIVE"
-              },
-              "C_NUM_MONITOR_SLOTS": {
-                "value": "1"
-              },
-              "C_NUM_OF_PROBES": {
-                "value": "20"
-              },
-              "C_PROBE10_TYPE": {
-                "value": "0"
-              },
-              "C_PROBE11_TYPE": {
-                "value": "0"
-              },
-              "C_PROBE12_TYPE": {
-                "value": "0"
-              },
-              "C_PROBE13_TYPE": {
-                "value": "0"
-              },
-              "C_PROBE14_TYPE": {
-                "value": "0"
-              },
-              "C_PROBE15_TYPE": {
-                "value": "0"
-              },
-              "C_PROBE16_TYPE": {
-                "value": "0"
-              },
-              "C_PROBE17_TYPE": {
-                "value": "0"
-              },
-              "C_PROBE18_TYPE": {
-                "value": "0"
-              },
-              "C_PROBE19_TYPE": {
-                "value": "0"
-              },
-              "C_PROBE7_TYPE": {
-                "value": "0"
-              },
-              "C_PROBE8_TYPE": {
-                "value": "0"
-              },
-              "C_PROBE9_TYPE": {
-                "value": "0"
-              },
-              "C_SLOT_0_APC_EN": {
-                "value": "0"
-              },
-              "C_SLOT_0_AXI_DATA_SEL": {
-                "value": "1"
-              },
-              "C_SLOT_0_AXI_TRIG_SEL": {
-                "value": "1"
-              },
-              "C_SLOT_0_INTF_TYPE": {
-                "value": "xilinx.com:interface:axis_rtl:1.0"
-              },
-              "C_SLOT_0_TYPE": {
-                "value": "0"
-              },
-              "C_SLOT_1_APC_EN": {
-                "value": "0"
-              },
-              "C_SLOT_1_AXI_DATA_SEL": {
-                "value": "1"
-              },
-              "C_SLOT_1_AXI_TRIG_SEL": {
-                "value": "1"
-              },
-              "C_SLOT_1_INTF_TYPE": {
-                "value": "xilinx.com:interface:axis_rtl:1.0"
-              },
-              "C_SLOT_1_TYPE": {
-                "value": "0"
-              },
-              "C_SLOT_2_APC_EN": {
-                "value": "0"
-              },
-              "C_SLOT_2_AXI_DATA_SEL": {
-                "value": "1"
-              },
-              "C_SLOT_2_AXI_TRIG_SEL": {
-                "value": "1"
-              },
-              "C_SLOT_2_INTF_TYPE": {
-                "value": "xilinx.com:interface:axis_rtl:1.0"
-              },
-              "C_SLOT_2_TYPE": {
-                "value": "0"
-              },
-              "C_SLOT_3_APC_EN": {
-                "value": "0"
-              },
-              "C_SLOT_3_AXI_DATA_SEL": {
-                "value": "1"
-              },
-              "C_SLOT_3_AXI_TRIG_SEL": {
-                "value": "1"
-              },
-              "C_SLOT_3_INTF_TYPE": {
-                "value": "xilinx.com:interface:axis_rtl:1.0"
-              },
-              "C_SLOT_3_TYPE": {
-                "value": "0"
-              },
-              "C_SLOT_4_APC_EN": {
-                "value": "0"
-              },
-              "C_SLOT_4_AXI_DATA_SEL": {
-                "value": "1"
-              },
-              "C_SLOT_4_AXI_TRIG_SEL": {
-                "value": "1"
-              },
-              "C_SLOT_4_INTF_TYPE": {
-                "value": "xilinx.com:interface:axis_rtl:1.0"
-              }
-            }
-          },
           "multiply": {
             "vlnv": "xilinx.com:ip:floating_point:7.1",
             "xci_name": "top_level_floating_point_0_1",
@@ -554,6 +423,90 @@
               },
               "Result_Precision_Type": {
                 "value": "Double"
+              }
+            }
+          },
+          "si570_math": {
+            "vlnv": "xilinx.com:module_ref:si570_math:1.0",
+            "xci_name": "top_level_si570_math_0_0",
+            "xci_path": "ip/top_level_si570_math_0_0/top_level_si570_math_0_0.xci",
+            "inst_hier_path": "si570_compute/si570_math",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "si570_math",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_RESET": {
+                    "value": "resetn",
+                    "value_src": "constant"
+                  },
+                  "FREQ_HZ": {
+                    "value": "100000000",
+                    "value_src": "ip_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "ip_prop"
+                  },
+                  "CLK_DOMAIN": {
+                    "value": "/source_100mhz/system_clock_clk_out1",
+                    "value_src": "ip_prop"
+                  }
+                }
+              },
+              "resetn": {
+                "type": "rst",
+                "direction": "I",
+                "parameters": {
+                  "POLARITY": {
+                    "value": "ACTIVE_LOW",
+                    "value_src": "constant"
+                  }
+                }
+              },
+              "si570_regs_in": {
+                "direction": "I",
+                "left": "47",
+                "right": "0"
+              },
+              "start": {
+                "direction": "I"
+              },
+              "idle": {
+                "direction": "O"
+              },
+              "si570_regs_out": {
+                "direction": "O",
+                "left": "47",
+                "right": "0"
+              },
+              "A": {
+                "direction": "O",
+                "left": "63",
+                "right": "0"
+              },
+              "B": {
+                "direction": "O",
+                "left": "63",
+                "right": "0"
+              },
+              "OP": {
+                "direction": "O",
+                "left": "2",
+                "right": "0"
+              },
+              "RESULT": {
+                "direction": "I",
+                "left": "63",
+                "right": "0"
+              },
+              "fpu_done": {
+                "direction": "I"
               }
             }
           },
@@ -1292,174 +1245,25 @@
                   }
                 }
               },
-              "done": {
+              "idle": {
                 "direction": "O"
-              },
-              "OPER": {
-                "direction": "I",
-                "left": "2",
-                "right": "0"
-              },
-              "A": {
-                "direction": "I",
-                "left": "63",
-                "right": "0"
-              },
-              "B": {
-                "direction": "I",
-                "left": "63",
-                "right": "0"
-              },
-              "RESULT": {
-                "direction": "O",
-                "left": "63",
-                "right": "0"
-              }
-            }
-          },
-          "si570_math": {
-            "vlnv": "xilinx.com:module_ref:si570_math:1.0",
-            "xci_name": "top_level_si570_math_0_0",
-            "xci_path": "ip/top_level_si570_math_0_0/top_level_si570_math_0_0.xci",
-            "inst_hier_path": "si570_compute/si570_math",
-            "reference_info": {
-              "ref_type": "hdl",
-              "ref_name": "si570_math",
-              "boundary_crc": "0x0"
-            },
-            "ports": {
-              "clk": {
-                "type": "clk",
-                "direction": "I",
-                "parameters": {
-                  "ASSOCIATED_RESET": {
-                    "value": "resetn",
-                    "value_src": "constant"
-                  },
-                  "FREQ_HZ": {
-                    "value": "100000000",
-                    "value_src": "ip_prop"
-                  },
-                  "PHASE": {
-                    "value": "0.0",
-                    "value_src": "ip_prop"
-                  },
-                  "CLK_DOMAIN": {
-                    "value": "/source_100mhz/system_clock_clk_out1",
-                    "value_src": "ip_prop"
-                  }
-                }
-              },
-              "resetn": {
-                "type": "rst",
-                "direction": "I",
-                "parameters": {
-                  "POLARITY": {
-                    "value": "ACTIVE_LOW",
-                    "value_src": "constant"
-                  }
-                }
-              },
-              "si570_regs_in": {
-                "direction": "I",
-                "left": "47",
-                "right": "0"
-              },
-              "start": {
-                "direction": "I"
-              },
-              "done": {
-                "direction": "O"
-              },
-              "si570_regs_out": {
-                "direction": "O",
-                "left": "47",
-                "right": "0"
-              },
-              "A": {
-                "direction": "O",
-                "left": "63",
-                "right": "0"
-              },
-              "B": {
-                "direction": "O",
-                "left": "63",
-                "right": "0"
               },
               "OP": {
-                "direction": "O",
+                "direction": "I",
                 "left": "2",
                 "right": "0"
               },
-              "RESULT": {
+              "A": {
                 "direction": "I",
                 "left": "63",
                 "right": "0"
               },
-              "fpu_done": {
-                "direction": "I"
-              },
-              "fp_2_power_28": {
-                "direction": "O",
+              "B": {
+                "direction": "I",
                 "left": "63",
                 "right": "0"
               },
-              "fp_old_nominal_hz": {
-                "direction": "O",
-                "left": "63",
-                "right": "0"
-              },
-              "fp_old_N1xHS_DIV": {
-                "direction": "O",
-                "left": "63",
-                "right": "0"
-              },
-              "fp_old_RFREQ_REG": {
-                "direction": "O",
-                "left": "63",
-                "right": "0"
-              },
-              "fp_old_RFREQ": {
-                "direction": "O",
-                "left": "63",
-                "right": "0"
-              },
-              "fp_old_fdco": {
-                "direction": "O",
-                "left": "63",
-                "right": "0"
-              },
-              "fp_xtal": {
-                "direction": "O",
-                "left": "63",
-                "right": "0"
-              },
-              "fp_new_fdco": {
-                "direction": "O",
-                "left": "63",
-                "right": "0"
-              },
-              "fp_new_nominal_hz": {
-                "direction": "O",
-                "left": "63",
-                "right": "0"
-              },
-              "fp_new_N1xHS_DIV": {
-                "direction": "O",
-                "left": "63",
-                "right": "0"
-              },
-              "fp_new_RFREQ": {
-                "direction": "O",
-                "left": "63",
-                "right": "0"
-              },
-              "fp_new_RFREQ_shifted": {
-                "direction": "O",
-                "left": "63",
-                "right": "0"
-              },
-              "fp_new_RFREQ_REG": {
+              "RESULT": {
                 "direction": "O",
                 "left": "63",
                 "right": "0"
@@ -1536,240 +1340,51 @@
               "si570_math/start"
             ]
           },
-          "fp_2_power_28": {
-            "ports": [
-              "si570_math/fp_2_power_28",
-              "system_ila_0/probe19"
-            ],
-            "hdl_attributes": {
-              "DEBUG": {
-                "value": "true"
-              },
-              "MARK_DEBUG": {
-                "value": "true"
-              }
-            }
-          },
-          "fp_new_N1xHS_DIV": {
-            "ports": [
-              "si570_math/fp_new_N1xHS_DIV",
-              "system_ila_0/probe8"
-            ],
-            "hdl_attributes": {
-              "DEBUG": {
-                "value": "true"
-              },
-              "MARK_DEBUG": {
-                "value": "true"
-              }
-            }
-          },
-          "fp_new_RFREQ": {
-            "ports": [
-              "si570_math/fp_new_RFREQ",
-              "system_ila_0/probe10"
-            ],
-            "hdl_attributes": {
-              "DEBUG": {
-                "value": "true"
-              },
-              "MARK_DEBUG": {
-                "value": "true"
-              }
-            }
-          },
-          "fp_new_RFREQ_REG": {
-            "ports": [
-              "si570_math/fp_new_RFREQ_REG",
-              "system_ila_0/probe11"
-            ],
-            "hdl_attributes": {
-              "DEBUG": {
-                "value": "true"
-              },
-              "MARK_DEBUG": {
-                "value": "true"
-              }
-            }
-          },
-          "fp_new_RFREQ_shifted": {
-            "ports": [
-              "si570_math/fp_new_RFREQ_shifted",
-              "system_ila_0/probe12"
-            ],
-            "hdl_attributes": {
-              "DEBUG": {
-                "value": "true"
-              },
-              "MARK_DEBUG": {
-                "value": "true"
-              }
-            }
-          },
-          "fp_new_fdco": {
-            "ports": [
-              "si570_math/fp_new_fdco",
-              "system_ila_0/probe7"
-            ],
-            "hdl_attributes": {
-              "DEBUG": {
-                "value": "true"
-              },
-              "MARK_DEBUG": {
-                "value": "true"
-              }
-            }
-          },
-          "fp_new_nominal_hz": {
-            "ports": [
-              "si570_math/fp_new_nominal_hz",
-              "system_ila_0/probe9"
-            ],
-            "hdl_attributes": {
-              "DEBUG": {
-                "value": "true"
-              },
-              "MARK_DEBUG": {
-                "value": "true"
-              }
-            }
-          },
-          "fp_old_N1xHS_DIV": {
-            "ports": [
-              "si570_math/fp_old_N1xHS_DIV",
-              "system_ila_0/probe14"
-            ],
-            "hdl_attributes": {
-              "DEBUG": {
-                "value": "true"
-              },
-              "MARK_DEBUG": {
-                "value": "true"
-              }
-            }
-          },
-          "fp_old_RFREQ": {
-            "ports": [
-              "si570_math/fp_old_RFREQ",
-              "system_ila_0/probe16"
-            ],
-            "hdl_attributes": {
-              "DEBUG": {
-                "value": "true"
-              },
-              "MARK_DEBUG": {
-                "value": "true"
-              }
-            }
-          },
-          "fp_old_RFREQ_REG": {
-            "ports": [
-              "si570_math/fp_old_RFREQ_REG",
-              "system_ila_0/probe17"
-            ],
-            "hdl_attributes": {
-              "DEBUG": {
-                "value": "true"
-              },
-              "MARK_DEBUG": {
-                "value": "true"
-              }
-            }
-          },
-          "fp_old_fdco": {
-            "ports": [
-              "si570_math/fp_old_fdco",
-              "system_ila_0/probe13"
-            ],
-            "hdl_attributes": {
-              "DEBUG": {
-                "value": "true"
-              },
-              "MARK_DEBUG": {
-                "value": "true"
-              }
-            }
-          },
-          "fp_old_nominal_hz": {
-            "ports": [
-              "si570_math/fp_old_nominal_hz",
-              "system_ila_0/probe15"
-            ],
-            "hdl_attributes": {
-              "DEBUG": {
-                "value": "true"
-              },
-              "MARK_DEBUG": {
-                "value": "true"
-              }
-            }
-          },
-          "fp_xtal": {
-            "ports": [
-              "si570_math/fp_xtal",
-              "system_ila_0/probe18"
-            ],
-            "hdl_attributes": {
-              "DEBUG": {
-                "value": "true"
-              },
-              "MARK_DEBUG": {
-                "value": "true"
-              }
-            }
-          },
           "fpu_RESULT": {
             "ports": [
               "fpu/RESULT",
-              "system_ila_0/probe3",
               "si570_math/RESULT"
             ]
           },
           "fpu_done": {
             "ports": [
-              "fpu/done",
-              "system_ila_0/probe4",
+              "fpu/idle",
               "si570_math/fpu_done"
             ]
           },
           "si570_math_0_A": {
             "ports": [
               "si570_math/A",
-              "system_ila_0/probe1",
               "fpu/A"
             ]
           },
           "si570_math_0_B": {
             "ports": [
               "si570_math/B",
-              "system_ila_0/probe2",
               "fpu/B"
             ]
           },
           "si570_math_0_OP": {
             "ports": [
               "si570_math/OP",
-              "system_ila_0/probe0",
-              "fpu/OPER"
+              "fpu/OP"
             ]
           },
           "si570_math_done": {
             "ports": [
-              "si570_math/done",
-              "done",
-              "system_ila_0/probe5"
+              "si570_math/idle",
+              "idle"
             ]
           },
           "si570_math_si570_regs_out": {
             "ports": [
               "si570_math/si570_regs_out",
-              "si570_regs_out",
-              "system_ila_0/probe6"
+              "si570_regs_out"
             ]
           },
           "si570_regs_dout": {
             "ports": [
-              "si570_regs",
+              "si570_regs_in",
               "si570_math/si570_regs_in"
             ]
           },
@@ -1778,19 +1393,32 @@
               "clk",
               "to_int/aclk",
               "to_float/aclk",
-              "system_ila_0/clk",
               "multiply/aclk",
               "divide/aclk",
-              "fpu/clk",
-              "si570_math/clk"
+              "si570_math/clk",
+              "fpu/clk"
             ]
           },
           "source_100mhz_peripheral_aresetn": {
             "ports": [
               "resetn",
-              "fpu/resetn",
-              "si570_math/resetn"
+              "si570_math/resetn",
+              "fpu/resetn"
             ]
+          }
+        }
+      },
+      "system_ila": {
+        "vlnv": "xilinx.com:ip:system_ila:1.1",
+        "xci_name": "top_level_system_ila_0_0",
+        "xci_path": "ip/top_level_system_ila_0_0/top_level_system_ila_0_0.xci",
+        "inst_hier_path": "system_ila",
+        "parameters": {
+          "C_MON_TYPE": {
+            "value": "NATIVE"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "2"
           }
         }
       }
@@ -1811,26 +1439,39 @@
       "PIN_0_1": {
         "ports": [
           "BTNC",
-          "button_0/PIN"
+          "button/PIN"
         ]
       },
       "button_0_Q": {
         "ports": [
-          "button_0/Q",
+          "button/Q",
           "si570_compute/start"
+        ]
+      },
+      "si570_compute_idle": {
+        "ports": [
+          "si570_compute/idle",
+          "system_ila/probe0"
+        ]
+      },
+      "si570_compute_si570_regs_out": {
+        "ports": [
+          "si570_compute/si570_regs_out",
+          "system_ila/probe1"
         ]
       },
       "si570_regs_dout": {
         "ports": [
           "si570_regs/dout",
-          "si570_compute/si570_regs"
+          "si570_compute/si570_regs_in"
         ]
       },
       "source_100mhz_clk_100mhz": {
         "ports": [
           "source_100mhz/clk_100mhz",
-          "button_0/CLK",
-          "si570_compute/clk"
+          "button/CLK",
+          "si570_compute/clk",
+          "system_ila/clk"
         ]
       },
       "source_100mhz_peripheral_aresetn": {

@@ -8,8 +8,8 @@ module si570_math
     // Computation begins when this is strobed high
     input start,
     
-    // Results are done when this strobe high
-    output reg done,
+    // The engine is idle when this is high
+    output idle,
 
     // Output is available here wheen "done" strobes high
     output reg[47:0] si570_regs_out,
@@ -18,25 +18,15 @@ module si570_math
     output reg [63:0] A, B,
     output reg [ 2:0] OP,
     input      [63:0] RESULT,
-    input             fpu_done,
-
-
-// Floating point values that we're going to calculate
-output reg[63:0]   fp_2_power_28, 
-            fp_old_nominal_hz,
-            fp_old_N1xHS_DIV,
-            fp_old_RFREQ_REG,
-            fp_old_RFREQ,
-            fp_old_fdco,
-            fp_xtal,
-            fp_new_fdco,
-            fp_new_nominal_hz,
-            fp_new_N1xHS_DIV,
-            fp_new_RFREQ,
-            fp_new_RFREQ_shifted,
-            fp_new_RFREQ_REG
+    input             fpu_done
 
 );
+
+reg[4:0] fsm_state;
+
+// We're idle when the state machine is doing nothing
+// and no one has told us to start
+assign idle = (start == 0 && fsm_state == 0);
 
 // The opcodes that our FPU (Floating Point Unit) supports
 localparam OP_NONE     = 0;
@@ -68,7 +58,7 @@ localparam[63:0] C_OLD_NOMINAL_HZ = 156250000;
 localparam[63:0] C_NEW_NOMINAL_HZ = 322265625;
 
 
-/*
+
 // Floating point values that we're going to calculate
 reg[63:0]   fp_2_power_28, 
             fp_old_nominal_hz,
@@ -83,13 +73,13 @@ reg[63:0]   fp_2_power_28,
             fp_new_RFREQ,
             fp_new_RFREQ_shifted,
             fp_new_RFREQ_REG;
-*/
-reg[4:0] fsm_state;
+
 
 always @(posedge clk) begin
 
-    OP   <= OP_NONE;
-    done <= 0;
+    // This will strobe high for exactly 1 clock cycle
+    OP <= OP_NONE;
+
 
     if (resetn == 0) begin
         fsm_state <= 0;
@@ -209,11 +199,9 @@ always @(posedge clk) begin
         13: if (fpu_done) begin
                 new_RFREQ_REG  <= RESULT;
                 si570_regs_out <= {new_HS_DIV_REG[2:0], new_N1_REG[6:0], RESULT[37:0]};
-                done           <= 1;
                 fsm_state      <= 0;
             end
-
-
+  
     endcase
 end
 
