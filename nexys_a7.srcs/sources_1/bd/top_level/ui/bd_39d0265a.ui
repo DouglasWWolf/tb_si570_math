@@ -1,0 +1,44 @@
+{
+   "ActiveEmotionalView":"No Loops",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-355,-249",
+   "DisplayTieOff":"1",
+   "ExpandedHierarchyInLayout":"",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port port-id_CLK100MHZ -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace port port-id_CPU_RESETN -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
+preplace port port-id_BTNC -pg 1 -lvl 0 -x 0 -y 260 -defaultsOSRD
+preplace inst source_100mhz -pg 1 -lvl 1 -x 180 -y 60 -swap {0 3 2 1} -defaultsOSRD -pinDir CLK100MHZ left -pinY CLK100MHZ 0L -pinDir clk_100mhz right -pinY clk_100mhz 120R -pinDir CPU_RESETN left -pinY CPU_RESETN 20L -pinBusDir peripheral_aresetn right -pinBusY peripheral_aresetn 0R
+preplace inst button_0 -pg 1 -lvl 2 -x 430 -y 240 -defaultsOSRD -pinDir CLK left -pinY CLK 0L -pinDir PIN left -pinY PIN 20L -pinDir Q right -pinY Q 0R
+preplace inst si570_regs -pg 1 -lvl 2 -x 430 -y 120 -defaultsOSRD -pinBusDir dout right -pinBusY dout 0R
+preplace inst si570_compute -pg 1 -lvl 3 -x 690 -y 60 -swap {2 0 3 1 4 5} -defaultsOSRD -pinDir clk left -pinY clk 120L -pinDir resetn left -pinY resetn 0L -pinDir start left -pinY start 180L -pinBusDir si570_regs left -pinBusY si570_regs 60L -pinDir done right -pinY done 0R -pinBusDir si570_regs_out right -pinBusY si570_regs_out 40R
+preplace netloc CLK100MHZ_1 1 0 1 NJ 60
+preplace netloc CPU_RESETN_1 1 0 1 NJ 80
+preplace netloc PIN_0_1 1 0 2 NJ 260 NJ
+preplace netloc button_0_Q 1 2 1 N 240
+preplace netloc si570_regs_dout 1 2 1 NJ 120
+preplace netloc source_100mhz_clk_100mhz 1 1 2 340 180 NJ
+preplace netloc source_100mhz_peripheral_aresetn 1 1 2 NJ 60 N
+levelinfo -pg 1 0 180 430 690 960 1050
+pagesize -pg 1 -db -bbox -sgen -150 -20 1050 350
+",
+   "No Loops_ScaleFactor":"0.931208",
+   "No Loops_TopLeft":"-142,-252",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port port-id_CLK100MHZ -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace port port-id_CPU_RESETN -pg 1 -lvl 0 -x 0 -y 180 -defaultsOSRD
+preplace inst system_clock -pg 1 -lvl 1 -x 130 -y 100 -defaultsOSRD
+preplace inst system_reset -pg 1 -lvl 2 -x 430 -y 200 -defaultsOSRD
+preplace inst system_interconnect -pg 1 -lvl 3 -x 750 -y 90 -defaultsOSRD
+preplace netloc clk_in1_0_1 1 0 1 NJ 100
+preplace netloc system_clock_clk_100mhz 1 1 2 240 100 NJ
+preplace netloc ext_reset_in_0_1 1 0 2 NJ 180 NJ
+preplace netloc system_reset_interconnect_aresetn 1 2 1 610 120n
+levelinfo -pg 1 0 130 430 750 900
+pagesize -pg 1 -db -bbox -sgen -150 0 900 300
+"
+}
+0
